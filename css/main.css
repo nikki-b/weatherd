@@ -1,0 +1,28 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+body{
+	background-image: url(../img/mug.jpeg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.wrapper{
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+#today{
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+}
+.forecast{
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+}
