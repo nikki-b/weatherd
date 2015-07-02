@@ -14,31 +14,18 @@ $(document).ready(function(){
 	function getForecast(location){
 		$.get("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+location.coords.latitude+"&lon="+location.coords.longitude+"&cnt=5&mode=json&units=imperial", function(output){
 			console.log(output);
-			$("#today").append(
-				"<p>"+Math.round(output.list[0].temp.day)+"&deg;</p>"+
-				"<p>"+output.list[0].weather[0].description+
-				"</p><img src='img/"+output.list[0].weather[0].icon+".svg'>"
-			);
-			$("#1").append(
-				"<p>"+Math.round(output.list[1].temp.day)+"&deg;</p>"+
-				"<p>"+output.list[1].weather[0].description+"</p>"+
-				"<img src='img/"+output.list[1].weather[0].icon+".svg'>"
-			);
-			$("#2").append(
-				"<p>"+Math.round(output.list[2].temp.day)+"</p>&deg;"+
-				"<p>"+output.list[2].weather[0].description+"</p>"+
-				"<img src='img/"+output.list[2].weather[0].icon+".svg'>"
-			);
-			$("#3").append(
-				"<p>"+Math.round(output.list[3].temp.day)+"</p>&deg;"+
-				"<p>"+output.list[3].weather[0].description+"</p>"+
-				"<img src='img/"+output.list[3].weather[0].icon+".svg'>"
-			);
-			$("#4").append(
-				"<p>"+Math.round(output.list[4].temp.day)+"</p>&deg;"+
-				"<p>"+output.list[4].weather[0].description+"</p>"+
-				"<img src='img/"+output.list[4].weather[0].icon+".svg'>"
-			);
+			for(var i = 0; i < output.list.length; i++){
+				var d = new Date(output.list[i].dt * 1000);
+				var day = d.getDay();
+				var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+				$("#"+i).append(
+					"<h4>"+ weekDays[day] +"</h4>"+
+					"<h3>"+Math.round(output.list[i].temp.day)+"&deg;F</h3>"+
+					// "<p>"+output.list[i].weather[0].description+"</p>"+
+					"<img src='img/"+output.list[i].weather[0].icon+".svg'>"
+				);
+			}
+			// displaying location
 			$("#location").text(output.city.name);
 			console.log("Weather ID", output.list[0].weather[0].icon);
 		})

@@ -12,17 +12,36 @@ body{
 }
 
 .wrapper{
-	margin-top: 5%;
 	margin-left: 5%;
 }
 
-#today{
-	height: 200px;
-	width: 200px;
-	display: inline-block;
-}
 .forecast{
-	height: 200px;
+	margin-top: 10px;
+	height: 130px;
 	width: 200px;
 	display: inline-block;
+	padding: 10px;
+	vertical-align: top;
+	text-align: center;
+}
+
+	.forecast:not(:last-child){
+		border-right: 1px solid black;
+	}
+
+	.forecast h3, p{
+		margin-top: 10px;
+	}
+
+#title{
+	margin-top: 3%;
+	margin-left: 2%;
+}
+
+	#title #contrast{
+		color: rgba(192,192,192,0.3);
+	}
+
+#greeting{
+	margin-top: 2%;
 }
