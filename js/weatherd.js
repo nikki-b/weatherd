@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	screen.orientation.lock('landscape');
 	var forecast;
 	getLocation();
 	// get location and pass to show function
@@ -21,7 +22,6 @@ $(document).ready(function(){
 				$("#"+i).append(
 					"<h4>"+ weekDays[day] +"</h4>"+
 					"<h3>"+Math.round(output.list[i].temp.day)+"&deg;F</h3>"+
-					// "<p>"+output.list[i].weather[0].description+"</p>"+
 					"<img src='img/"+output.list[i].weather[0].icon+".svg'>"
 				);
 			}
