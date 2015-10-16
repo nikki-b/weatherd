@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	screen.orientation.lock('landscape');
 	var forecast;
 	getLocation();
 	// get location and pass to show function
@@ -11,10 +10,16 @@ $(document).ready(function(){
 			$("#message").innerHTML = "Geolocation is not supported by this browser.";
 		}
 	}
+
+
+	// using openweather api
 	// get the forecast and show it
 	function getForecast(location){
-		$.get("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+location.coords.latitude+"&lon="+location.coords.longitude+"&cnt=5&mode=json&units=imperial", function(output){
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+location.coords.latitude+"&lon="+location.coords.longitude+"&cnt=5&mode=json&units=imperial&APPID=454420fd33898ae52c01398a3bc759c3", function(output){
 			console.log(output);
+			// get the local time
+			getTime(location.coords.latitude,location.coords.longitude, Date());
+			// set applicable css
 			for(var i = 0; i < output.list.length; i++){
 				var d = new Date(output.list[i].dt * 1000);
 				var day = d.getDay();
@@ -30,4 +35,11 @@ $(document).ready(function(){
 			console.log("Weather ID", output.list[0].weather[0].icon);
 		})
 	}
+	function getTime(lat,lon,timestamp){
+		$.get("https://maps.googleapis.com/maps/api/timezone/json?location="+lat+","+lon+"&timestamp="+timestamp+"&key=AIzaSyDlhfCFWMgdqCSsVbp7_Kax76cLGrYURUU", function(output){
+			console.log(output);
+			}
+		);
+	};
+
 })
