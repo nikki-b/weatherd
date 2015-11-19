@@ -17,7 +17,7 @@ $(document).ready(function(){
 		$.get("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+location.coords.latitude+"&lon="+location.coords.longitude+"&cnt=5&mode=json&units=imperial&APPID=454420fd33898ae52c01398a3bc759c3", function(output){
 			console.log(output);
 			// get the local time
-			getTime(location.coords.latitude,location.coords.longitude, Date());
+			// getTime(location.coords.latitude,location.coords.longitude, Date());
 			// set applicable css
 			for(var i = 0; i < output.list.length; i++){
 				var d = new Date(output.list[i].dt * 1000);
