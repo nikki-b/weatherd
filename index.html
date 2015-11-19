@@ -2,27 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<title>Weatherd</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Five-day forecast based on your current location." />
+	<meta name="keywords" content="api, weather, forecast, five-day, html5" />
 	<link rel="stylesheet" href="css/main.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-	<script type="text/javascript" src="js/weatherd.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="wrapper">
+	<div class="slideshow-wrapper">
+		<canvas width="1" height="1" id="container" style="position:absolute"></canvas>
 		<div id = "message">
 			<h2 id="title">weather<span id="contrast">'d</span></h2>
-			<h3 id="greeting">How's the weather lookin' in... <span id="location"></span>?</h2>
+			<h3 id="greeting">What's it like in ... <span id="location"></span>?</h2>
 		</div>
-		<div id="0" class="forecast">
+		<div id="0" class="forecast slide">
 		</div>
-		<div id="1" class="forecast">
+		<div id="1" class="forecast slide">
 		</div>
-		<div id="2" class="forecast">
+		<div id="2" class="forecast slide">
 		</div>
-		<div id="3" class="forecast">
+		<div id="3" class="forecast slide">
 		</div>
-		<div id="4" class="forecast">
+		<div id="4" class="forecast slide">
 		</div>
 	</div>
+	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="js/weatherd.js"></script>
 </body>
 </html>

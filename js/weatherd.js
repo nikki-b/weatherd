@@ -11,7 +11,6 @@ $(document).ready(function(){
 		}
 	}
 
-
 	// using openweather api
 	// get the forecast and show it
 	function getForecast(location){
@@ -35,11 +34,11 @@ $(document).ready(function(){
 			console.log("Weather ID", output.list[0].weather[0].icon);
 		})
 	}
-	function getTime(lat,lon,timestamp){
-		$.get("https://maps.googleapis.com/maps/api/timezone/json?location="+lat+","+lon+"&timestamp="+timestamp+"&key=AIzaSyDlhfCFWMgdqCSsVbp7_Kax76cLGrYURUU", function(output){
-			console.log(output);
-			}
-		);
-	};
+	// function getTime(lat,lon,timestamp){
+	// 	$.get("https://maps.googleapis.com/maps/api/timezone/json?location="+lat+","+lon+"&timestamp="+timestamp+"&key=AIzaSyDlhfCFWMgdqCSsVbp7_Kax76cLGrYURUU", function(output){
+	// 		console.log(output);
+	// 		}
+	// 	);
+	// };
 
 })
