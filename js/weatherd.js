@@ -26,7 +26,7 @@ $(document).ready(function(){
 				$("#"+i).append(
 					"<h4>"+ weekDays[day] +"</h4>"+
 					"<h3>"+Math.round(output.list[i].temp.day)+"&deg;F</h3>"+
-					"<img src='img/"+output.list[i].weather[0].icon+".svg'>"
+					"<img src='img/icons/"+output.list[i].weather[0].icon+".svg'>"
 				);
 			}
 			// displaying location
