@@ -3,45 +3,50 @@
 	padding: 0px;
 	font-family: 'Roboto Condensed', sans-serif;
 }
+
 body{
-	background-image: url(../img/mug.jpeg);
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center center;
-	background-repeat: no-repeat;
-}
-
-.wrapper{
-	margin-left: 5%;
-}
-
-.forecast{
-	margin-top: 10px;
-	height: 130px;
-	width: 200px;
-	display: inline-block;
-	padding: 10px;
-	vertical-align: top;
+	height: 100vh;
+	background-image: url('https://source.unsplash.com/category/nature');
+ 	background-size: cover;
+  background-position: center;
 	text-align: center;
 }
 
-	.forecast:not(:last-child){
-		border-right: 1px solid black;
-	}
-
-	.forecast h3, p{
-		margin-top: 10px;
-	}
-
-#title{
-	margin-top: 3%;
-	margin-left: 2%;
+.bg{
+	background-color: rgba(255,255,255,0.25);
+	border-radius: 10px;
 }
 
-	#title #contrast{
-		color: rgba(192,192,192,0.3);
-	}
-
-#greeting{
-	margin-top: 2%;
+.message{
+	display: block;
 }
+	.title{
+		margin-top: 3%;
+		margin-left: 2%;
+		text-shadow: 1px 1px 10px white;
+	}
+		.title .contrast{
+			color: lightblue;
+		}
+		.greeting{
+			text-shadow: 1px 1px 10px white;
+		}
+
+.forecast{
+	margin-top: 5%;
+	height: 10%;
+	width: 150px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+}
+	.day-text{
+		display: inline-block;
+		vertical-align: top;
+		width: 60%;
+		margin-top: 5%;
+	}
+	.forecast .icon{
+		margin-top: -5%;
+		width: 40%;
+	}
